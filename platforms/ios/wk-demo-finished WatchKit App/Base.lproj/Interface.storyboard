@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+    </dependencies>
+    <scenes>
+        <!--Stop Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="StopController" customModule="wk_demo_finished_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="3eU-UU-aVR">
+                            <items>
+                                <tableRow identifier="StopRowIdentifier" id="hiK-JI-Ora" customClass="StopRowController" customModule="wk_demo_finished_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="nj9-Ye-BMV">
+                                        <items>
+                                            <label width="120.5" alignment="left" verticalAlignment="center" text="Label" textAlignment="justified" id="8dP-Na-a4Y"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="dxQ-o5-5XS" kind="push" id="Exy-jf-qDN"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="lineName" destination="8dP-Na-a4Y" id="Ewc-uJ-730"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="lineTable" destination="3eU-UU-aVR" id="HbU-sh-s3w"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="38" y="320"/>
+        </scene>
+        <!--Line Controller-->
+        <scene sceneID="5XF-Ym-poK">
+            <objects>
+                <controller id="dxQ-o5-5XS" customClass="LineController" customModule="wk_demo_finished_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Label" id="Qmj-eh-9Mg"/>
+                        <label alignment="center" text="Label" id="ssN-XR-FY9"/>
+                        <timer alignment="center" verticalAlignment="bottom" textAlignment="center" id="nnr-2x-5gI"/>
+                    </items>
+                    <connections>
+                        <outlet property="estimatedTimeOfArrival" destination="nnr-2x-5gI" id="k6E-fm-9Nh"/>
+                        <outlet property="lineName" destination="Qmj-eh-9Mg" id="Fuu-wI-0Dq"/>
+                        <outlet property="lineNumber" destination="ssN-XR-FY9" id="Pxh-Z9-D0x"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="345" y="320"/>
+        </scene>
+    </scenes>
+</document>
